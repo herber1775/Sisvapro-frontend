@@ -13,6 +13,12 @@ import { ConsultEmpleadoComponent } from './components/consult-empleado/consult-
 import { ConsultClienteComponent } from './components/consult-cliente/consult-cliente.component';
 import { ConsultCarrosComponent } from './components/consult-carros/consult-carros.component';
 import { ConsultReporteVentaComponent } from './components/consult-reporte-venta/consult-reporte-venta.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormBuilder,FormsModule} from '@angular/forms';
+import { Route, RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { ConsultReporteVentaComponent } from './components/consult-reporte-venta
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
