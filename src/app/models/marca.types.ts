@@ -1,14 +1,18 @@
-export class marcaDto{
-
+export interface marcaDto{
+    idmarca: number
+    descripcion: String
 }
-export class marcaCreateDto{
-
-}
-
-export class marcaUpdateDto{
-
+export interface marcaCreateDto{
+    idmarca: number
+    descripcion: String
 }
 
-export class marcaDeleteDto{
+export interface marcaUpdateDto{
+    idmarca: number
+    descripcion: String
+}
 
+export interface marcaDeleteDto{
+    idmarca: number
+    descripcion: String
 }
