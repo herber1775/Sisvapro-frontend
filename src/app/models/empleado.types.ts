@@ -23,7 +23,7 @@ export interface TipoDto {
     user: string;
     clave: string;
     img: string;
-    objTipo: number;
+    objTipo: TipoDto;
   }
 
 export interface EmpleadoUpdateDto{
