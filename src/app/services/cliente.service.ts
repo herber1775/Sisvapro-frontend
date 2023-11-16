@@ -15,11 +15,11 @@ private urlApi="http://localhost:8080"
   }
 
   public getAll():Observable<any>{
-    return this.http.get<any>(`${this.urlApi}/cliente`) 
+    return this.http.get<any>(`${this.urlApi}`) 
   }
 
   public createClient(dto:clienteCreateDto):Observable<clienteCreateDto>{
-    return this.http.post<clienteCreateDto>(`${this.urlApi}/insertCliente`,dto)
+    return this.http.post<clienteCreateDto>(`${this.urlApi}`,dto)
   }
 
   public deleteClient(idCli:number):Observable<any>{
@@ -27,7 +27,7 @@ private urlApi="http://localhost:8080"
   }
 
   public updateClient(dto:clienteUpdateDto):Observable<clienteUpdateDto>{
-    return this.http.put<clienteUpdateDto>(`${this.urlApi}/updateCliente`,dto)
+    return this.http.put<clienteUpdateDto>(`${this.urlApi}`,dto)
   }
 
 }
