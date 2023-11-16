@@ -16,6 +16,7 @@ import { ConsultReporteVentaComponent } from './components/consult-reporte-venta
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { FormBuilder,FormsModule} from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 
