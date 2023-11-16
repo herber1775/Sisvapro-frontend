@@ -1,15 +1,34 @@
-export class clienteDto{
-
+export interface clienteDto{
+    dni:string;
+    nombre:string;
+    apellido: string;
+    direccion: string;
+    correo: string;
+    // clave: string;
+    telefono: string;
 }  
 
-export class clienteCreateDto{
-
+export interface clienteCreateDto{
+    dni:string;
+    nombre:string;
+    apellido: string;
+    direccion: string;
+    correo: string;
+    // clave: string;
+    telefono: string;
 }
 
-export class clienteUpdateDto{
-
+export interface clienteUpdateDto{
+    idCli:number
+    dni:string;
+    nombre:string;
+    apellido: string;
+    direccion: string;
+    correo: string;
+    // clave: string;
+    telefono: string;
 }
 
-export class clienteDeleteDto{
-
+export interface clienteDeleteDto{
+    idCli:number
 }
