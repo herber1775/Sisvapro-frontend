@@ -52,18 +52,16 @@ export class MantClienteComponent implements OnInit {
 
   guardarUsuario() {
     const ClientDni = this.clients.map((cliente: any) => cliente.dni)
-    ClientDni.map((element:any)=>{
-      if (element != this.formCliente.get('dni')?.value){
+    ClientDni.map((element: any) => {
+      if (element != this.formCliente.get('dni')?.value) {
         this.valid = true;
       } else {
         this.valid = false;
         console.log("(┬┬﹏┬┬)")
       }
-
     })
 
     if (this.formCliente.valid && this.valid == true) {
-      // this.formCliente.valid;
       const nuevoCliente: clienteCreateDto = {
         dni: this.formCliente.get('dni')?.value,
         nombre: this.formCliente.get('nombre')?.value,

@@ -15,18 +15,18 @@ export class EmpleadoService {
   }
 
   public getAll():Observable<any>{
-    return this.http.get<EmpleadoDto>(`${this.urlApi}/empleado`)
+    return this.http.get<EmpleadoDto>(`${this.urlApi}/empleados`)
+  }
+
+
+
+  public createEmpleado(dto:EmpleadoCreateDto):Observable<EmpleadoCreateDto>{
+    return this.http.post<EmpleadoCreateDto>(`${this.urlApi}/empleados`,dto)
   }
 
   public deleteEmpleado(id:EmpleadoDeleteDto):Observable<EmpleadoDeleteDto>{
-    return this.http.delete<EmpleadoDeleteDto>(`${this.urlApi}/empleado/${id}`)
+    return this.http.delete<EmpleadoDeleteDto>(`${this.urlApi}/empleados/${id}`)
   }
-
-  public createEmpleado(dto:EmpleadoCreateDto):Observable<EmpleadoCreateDto>{
-    return this.http.post<EmpleadoCreateDto>(`${this.urlApi}/empleado/`,dto)
-  }
-
-
 
 
 

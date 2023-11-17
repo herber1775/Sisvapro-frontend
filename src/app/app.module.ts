@@ -15,10 +15,15 @@ import { ConsultCarrosComponent } from './components/consult-carros/consult-carr
 import { ConsultReporteVentaComponent } from './components/consult-reporte-venta/consult-reporte-venta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { FormBuilder,FormsModule} from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -33,14 +38,20 @@ import { Route, RouterModule } from '@angular/router';
     ConsultEmpleadoComponent,
     ConsultClienteComponent,
     ConsultCarrosComponent,
-    ConsultReporteVentaComponent
+    ConsultReporteVentaComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
