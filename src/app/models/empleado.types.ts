@@ -38,7 +38,7 @@ export interface EmpleadoUpdateDto{
     objTipo: TipoDto
 }
 
-export interface empleadoDeleteDto{
+export interface EmpleadoDeleteDto{
     idEmpleado:number;
 }
 
