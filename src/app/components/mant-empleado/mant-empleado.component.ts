@@ -76,8 +76,8 @@ export class MantEmpleadoComponent implements OnInit {
         img: this.formEmpleado.get('img')?.value,
         clave: this.formEmpleado.get('clave')?.value,
         objTipo: {
-          idTipo: this.formEmpleado.get('objTipo.idTipo')?.value,
-          descrip: this.formEmpleado.get('objTipo.descrip')?.value,
+          idTipo: this.formEmpleado.get('objTipo')?.value,
+          descrip: "",
         },
 
         // objTipo: this.formEmpleado.get('objTipo')?.value
