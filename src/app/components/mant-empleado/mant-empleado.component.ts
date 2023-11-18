@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { EmpleadoService } from './../../services/empleado.service';
-import { EmpleadoCreateDto, EmpleadoDto, TipoDto } from 'src/app/models/empleado.types';
+import { EmpleadoCreateDto, EmpleadoDto, EmpleadoUpdateDto, TipoDto } from 'src/app/models/empleado.types';
 
 @Component({
   selector: 'app-mant-empleado',
@@ -97,14 +97,38 @@ export class MantEmpleadoComponent implements OnInit {
     }
   }
 
-  ActualizarEmpleado() {
-    console.log(this.formEmpleado.value);
+  async ActualizarEmpleado() {
+  if (this.formEmpleado.valid) {
+    const datos: EmpleadoUpdateDto = {
+      idEmpleado: this.formEmpleado.get('idEmpleado')?.value,
+      dni: this.formEmpleado.get('dni')?.value,
+      nom: this.formEmpleado.get('nom')?.value,
+      ape: this.formEmpleado.get('ape')?.value,
+      tel: this.formEmpleado.get('tel')?.value,
+      user: this.formEmpleado.get('user')?.value,
+      clave: this.formEmpleado.get('clave')?.value,
+      img: this.formEmpleado.get('img')?.value,
+      objTipo: {
+        idTipo: this.formEmpleado.get('objTipo')?.value,
+        descrip: '', 
+      },
+    };
+
+    this.empleadoService.updateEmpleado(datos).subscribe(
+      (data: EmpleadoUpdateDto) => {
+        console.log('Actualizado', data);
+      },
+      (error) => {
+        console.error('Error al actualizar:', error);
+      }
+    );
+
+    setTimeout(() => this.getDataEmpleado(), 350);
+    this.limpiarForm();
   }
+}
 
-  editarEmpleado(event: EmpleadoDto) {
-    // Implementa la lógica de edición si es necesario
-    
-
+  public editarEmpleado(event: EmpleadoDto) {  
     this.formEmpleado.patchValue({
       idEmpleado: event.idEmpleado,
       dni: event.dni,
