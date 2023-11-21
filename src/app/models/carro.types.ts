@@ -1,5 +1,11 @@
+export interface MarcaDto {
+    idmarca: number;
+    nomMarca: string;
+  }
+  
+
 export class carroDto{
-    idCarro!:number;
+    id!:number;
     descripcion!:string;
     modelo!:string;
     origen!:string;
@@ -7,18 +13,26 @@ export class carroDto{
     precio!:string;
     stock!:number;
     anio!:number;
-    nrSerie!:string;
-    idMarca!:number;
+    nroSerie!:string;
+    objMarca!: MarcaDto;
 }  
 
-export class carroCreateDto{
-
+export interface carroCreateDto{
+    descripcion:string;
+    modelo:string;
+    origen:string;
+    combustible:string;
+    precio:string;
+    stock:number;
+    anio:number;
+    nroSerie:string;
+    objMarca: MarcaDto;
 }
 
 export class carroUpdateDto{
 
 }
 
-export class carroDeleteDto{
-
+export interface carroDeleteDto{
+    id:number;
 }

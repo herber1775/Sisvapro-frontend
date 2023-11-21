@@ -13,21 +13,21 @@ export class CarroService {
   constructor(private http : HttpClient ){}
 
   public getAll():Observable<any>{
-    return this.http.get<any>(`${this.urlApi}/carro`) 
+    return this.http.get<any>(`${this.urlApi}/carros`) 
   }
 
-  public createClient(data:carroCreateDto):Observable<carroCreateDto>{
+  public createCarro(data:carroCreateDto):Observable<carroCreateDto>{
     console.log(data);
-    return this.http.post<carroCreateDto>(`${this.urlApi}/carro`,data)
+    return this.http.post<carroCreateDto>(`${this.urlApi}/carros`,data)
   }
 
-  public deleteClient(idCarro:number):Observable<any>{
-    console.log(idCarro);
-    return this.http.delete<any>(`${this.urlApi}/${idCarro}`)
+  public updateCarro(data:carroUpdateDto):Observable<carroUpdateDto>{
+    return this.http.put<carroUpdateDto>(`${this.urlApi}/carros`,data)
   }
 
-  public updateClient(data:carroUpdateDto):Observable<carroUpdateDto>{
-    return this.http.put<carroUpdateDto>(`${this.urlApi}/carro`,data)
+  public deleteCarro(id:number):Observable<any>{
+    console.log(id);
+    return this.http.delete<any>(`${this.urlApi}/carros/${id}`)
   }
 
 }
