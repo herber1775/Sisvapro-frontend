@@ -1,6 +1,6 @@
 export interface MarcaDto {
     idmarca: number;
-    nomMarca: string;
+    descripcion: string;
   }
   
 
@@ -9,12 +9,12 @@ export class carroDto{
     descripcion!:string;
     modelo!:string;
     origen!:string;
-    combustible!:string;
     precio!:string;
     stock!:number;
     anio!:number;
     nroSerie!:string;
     objMarca!: MarcaDto;
+    combustible!:string;
 }  
 
 export interface carroCreateDto{

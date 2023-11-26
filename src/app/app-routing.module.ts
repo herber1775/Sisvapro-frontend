@@ -14,8 +14,8 @@ import { ConsultCarrosComponent } from './components/consult-carros/consult-carr
 
 const routes: Routes = [
 
+  { path : "", component: MenuPrincipalComponent},
   // { path : "app-menu-principal", component: MenuPrincipalComponent},
-  { path : "app-menu-principal", component: MenuPrincipalComponent},
   { path : "app-mant-empleado", component: MantEmpleadoComponent},
   { path : "app-mant-cliente", component: MantClienteComponent},
   { path : "app-mant-carros", component: MantCarrosComponent},

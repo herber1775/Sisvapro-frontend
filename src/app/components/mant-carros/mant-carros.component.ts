@@ -16,16 +16,16 @@ export class MantCarrosComponent implements OnInit {
   public valid: boolean | null = null;
 
   objMarca: MarcaDto[] = [
-    { idmarca: 1, nomMarca: "Audi" },
-    { idmarca: 2, nomMarca: "Suzuki"},
-    { idmarca: 3, nomMarca: "Haval"},
-    { idmarca: 4, nomMarca: "Great Wall"},
-    { idmarca: 5, nomMarca: "Honda"},
-    { idmarca: 6, nomMarca: "Mazda"},
-    { idmarca: 7, nomMarca: "Changan"},
-    { idmarca: 8, nomMarca: "Mercedes-Benz"},
-    { idmarca: 9, nomMarca: "Toyota"},
-    { idmarca: 10, nomMarca: "Mitsubishi"},
+    { idmarca: 1, descripcion: "Audi" },
+    { idmarca: 2, descripcion: "Suzuki"},
+    { idmarca: 3, descripcion: "Haval"},
+    { idmarca: 4, descripcion: "Great Wall"},
+    { idmarca: 5, descripcion: "Honda"},
+    { idmarca: 6, descripcion: "Mazda"},
+    { idmarca: 7, descripcion: "Changan"},
+    { idmarca: 8, descripcion: "Mercedes-Benz"},
+    { idmarca: 9, descripcion: "Toyota"},
+    { idmarca: 10, descripcion: "Mitsubishi"},
   ];
 
   constructor(
@@ -33,24 +33,26 @@ export class MantCarrosComponent implements OnInit {
     private formBuilder: FormBuilder,
     ) {}
   
-  ngOnInit(): void {
-
-    this.formCarro = this.formBuilder.group({
-      id: [''],
-      descripcion: ['', Validators.required],
-      modelo: ['', Validators.required],
-      origen: ['', Validators.required],
-      combustible: ['', Validators.required],
-      precio: ['', Validators.required],
-      stock: ['', Validators.required],
-      anio: ['', Validators.required],
-      nroSerie: ['', Validators.required],
-      objMarca: this.formBuilder.group ({
-        idmarca: ['', Validators.required],
-        nomMarca: ['', Validators.required],
-      })
-    });  
-    this.getDataCarro();}
+    ngOnInit(): void {
+      this.formCarro = this.formBuilder.group({
+        id: [''],
+        descripcion: ['', Validators.required],
+        modelo: ['', Validators.required],
+        origen: ['', Validators.required],
+        precio: ['', Validators.required],
+        stock: ['', Validators.required],
+        anio: ['', Validators.required],
+        nroSerie: ['', Validators.required],
+        objMarca: this.formBuilder.group({
+          idmarca: ['', Validators.required],
+          descripcion: ['', Validators.required],
+        }),
+        combustible: ['', Validators.required],
+      
+       
+      });
+      this.getDataCarro();
+    }
 
   public limpiarForm(): void{
     this.formCarro.reset();
@@ -85,19 +87,24 @@ export class MantCarrosComponent implements OnInit {
         nroSerie: this.formCarro.get('nroSerie')?.value,
         objMarca: {
           idmarca: this.formCarro.get('objMarca.idmarca')?.value,
-          nomMarca: this.formCarro.get('objMarca.nomMarca')?.value,
+          descripcion: this.formCarro.get('objMarca.descripcion')?.value,
     },
 
   };
   
-    this.carroService.createCarro(nuevoCarro).subscribe (
+  this.carroService.createCarro(nuevoCarro).subscribe(
     (respuesta: carroCreateDto) => {
       console.log('Carro creado', respuesta);
       this.getDataCarro();
-    });
+    },
+    (error) => {
+      console.error('Error al crear el carro', error);
+      // Agrega lógica de manejo de errores aquí
+    }
+  );
     
     this.limpiarForm();
-    setTimeout(() => this.getDataCarro(), 350);
+    // setTimeout(() => this.getDataCarro(), 350);
     
   }
 
@@ -105,7 +112,7 @@ export class MantCarrosComponent implements OnInit {
 
   }
   
-  ecargarCarro(id:number) {
+  ecargarCarro(id:any) {
 
   }
 
@@ -117,7 +124,7 @@ export class MantCarrosComponent implements OnInit {
   if (confirmarEliminacion) {
     this.carroService.deleteCarro(id).subscribe((result) => {
         console.log("Carro eliminado", result);
-        this.getDataCarro();
+        // this.getDataCarro();
       });
   }
  }
