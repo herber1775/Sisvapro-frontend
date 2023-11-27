@@ -3,16 +3,28 @@ export interface TipoDto {
     descrip: string;
   }
   
-  export interface EmpleadoDto {
-    idEmpleado: number;
-    dni: string;
-    nom: string;
-    ape: string;
-    tel: string;
-    user: string;
-    clave: string;
-    img: string;
-    objTipo: TipoDto
+  export class Authority{
+    authority!: string;
+
+  }
+  export class EmpleadoDto {
+    idEmpleado!: number;
+    dni!: string;
+    nom!: string;
+    ape!: string;
+    tel!: string;
+    user!: string;
+    clave!: string;
+    img!: string;
+    objTipo!: TipoDto;
+    enabled!: boolean;
+    password!: string;
+    username!: string;
+    authorities!: Array<Authority>;
+    accountNonLocked!: boolean;
+    accountNonExpired!: boolean;
+    credentialsNonExpired!: boolean
+
   }
 
   export interface EmpleadoCreateDto {

@@ -30,4 +30,8 @@ export class EmpleadoService {
     return this.http.put<EmpleadoUpdateDto>(`${this.urlApi}/empleados`,dto)
   }
 
+  public obtenerPorId(id:number){
+    return this.http.get<EmpleadoDto>(this.urlApi+"/empleados/"+id)
+  }
+
 }

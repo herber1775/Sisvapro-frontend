@@ -15,11 +15,11 @@ import { ConsultCarrosComponent } from './components/consult-carros/consult-carr
 const routes: Routes = [
 
   // { path : "app-menu-principal", component: MenuPrincipalComponent},
-  { path : "app-menu-principal", component: MenuPrincipalComponent},
+  { path : "menu", component: MenuPrincipalComponent},
   { path : "app-mant-empleado", component: MantEmpleadoComponent},
   { path : "app-mant-cliente", component: MantClienteComponent},
   { path : "app-mant-carros", component: MantCarrosComponent},
-  { path : "app-login", component: LoginComponent},
+  { path : "", component: LoginComponent},
   { path : "app-generar-venta", component: GenerarVentaComponent},
   { path : "app-consult-reporte-venta", component: ConsultReporteVentaComponent},
   { path : "app-consult-empleado", component: ConsultEmpleadoComponent},

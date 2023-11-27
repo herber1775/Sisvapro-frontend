@@ -1,1 +1,82 @@
-<p>generar-venta works!</p>
+<div>
+    <h1 class="text-center title-venta" style="padding: 0 50px;">Generar Venta</h1>
+    <div class="container-content-venta" >
+
+        <section class="data-input-cliente-venta">
+            <div class="label-input-cliente" for="">Datos del Cliente</div>
+            <form [formGroup]="formSearchCliente" (ngSubmit)="buscarCliente()" action="" class="form-dni-cliente">
+                <div><input formControlName="dni" type="text" placeholder="Dni"></div>
+                <button class="btn btn-primary">Buscar</button>
+            </form>
+            <div class="output-cliente-venta"><input type="text" readonly value="{{clienteFromStorage.nombre}}"></div>
+        </section>
+        <section class="data-input-carro-venta">
+            <div class="label-input-carro">Datos del carro</div>
+            <div  class="form-carro-clente">
+                <form [formGroup]="formSearchCarro" (ngSubmit)="buscarCarro()" action="#" class="form-id-carro">
+                    <input type="text" formControlName="id" placeholder="Código">
+                    <button type="submit" class="btn btn-light">Buscar</button>
+                </form>
+                
+                <div class="output-carro-venta"><input value="{{carroObtenido.modelo}}" readonly type="text" placeholder="modelo"></div>
+                <div class="output-carro-venta"><input value="{{carroObtenido.precio}}" readonly type="text" placeholder="precio"></div>
+                
+                <form  action="#" class="form" [formGroup]="formCarro" (ngSubmit)="agregarCarro()">
+                    <input type="text" style="display: none;" value="{{clienteFromStorage.idCli}}" formControlName="codigoCliente">
+                    <input type="text" style="display: none;" value="{{carroObtenido.id}}" formControlName="codigoCarro">
+                    <div><input type="number"  placeholder="cantidad" formControlName="cantidad"></div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+        </section>
+        <section class="data-output-venta">
+            <form action="#">
+                <div class="nroserie"><label for="nroserie"></label>Nro: Serie<input value="{{serie}}" id="nroserie" type="text"></div>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nro
+                                </th>
+                                <th>
+                                    Código
+                                </th>
+                                <th>
+                                    Descripción
+                                </th>
+                                <th>
+                                    Precio
+                                </th>
+                                <th>
+                                    Cantidad
+                                </th>
+                                <th>
+                                    Subtotal
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="
+                            let detalles of detallesVenta">
+                                <td>{{detalles.carro.nroSerie}}</td>
+                                <td>{{detalles.carro.id}}</td>
+                                <td>{{detalles.descripcionC}}</td>
+                                <td>{{detalles.precio}}</td>
+                                <td>{{detalles.cantidad}}</td>
+                                <td>{{detalles.subtotal}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    
+                </div>
+            </form>
+            <button class="btn btn-success" (click)="realizarVenta()">Generar Venta</button>
+                    <button class="btn btn-danger" (click)="limpiarVentaSession()">Cancelar</button>
+        </section>
+
+    </div>
+</div>
