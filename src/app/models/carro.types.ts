@@ -1,38 +1,47 @@
-export interface MarcaDto {
+export interface TipoDto {
     idmarca: number;
+    nomMarca: string;
+}
+
+
+export interface carroDto {
+    id: number;
     descripcion: string;
-  }
-  
-
-export class carroDto{
-    id!:number;
-    descripcion!:string;
-    modelo!:string;
-    origen!:string;
-    precio!:string;
-    stock!:number;
-    anio!:number;
-    nroSerie!:string;
-    objMarca!: MarcaDto;
-    combustible!:string;
-}  
-
-export interface carroCreateDto{
-    descripcion:string;
-    modelo:string;
-    origen:string;
-    combustible:string;
-    precio:string;
-    stock:number;
-    anio:number;
-    nroSerie:string;
-    objMarca: MarcaDto;
+    modelo: string;
+    origen: string;
+    precio: string;
+    stock: number;
+    anio: number;
+    nroSerie: string;
+    objMarca: TipoDto;
+    combustible: string
 }
 
-export class carroUpdateDto{
-
+export interface carroCreateDto {
+    descripcion: string;
+    modelo: string;
+    origen: string;
+    precio: string;
+    stock: number;
+    anio: number;
+    nroSerie: string;
+    objMarca: TipoDto;
+    combustible: string;
 }
 
-export interface carroDeleteDto{
-    id:number;
+export interface carroUpdateDto {
+    id: number;
+    descripcion: string;
+    modelo: string;
+    origen: string;
+    precio: string;
+    stock: number;
+    anio: number;
+    nroSerie: string;
+    objMarca: TipoDto;
+    combustible: string
+}
+
+export interface carroDeleteDto {
+    id: number;
 }

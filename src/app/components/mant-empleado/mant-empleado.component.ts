@@ -43,7 +43,7 @@ export class MantEmpleadoComponent implements OnInit {
   }
 
   public limpiarForm(): void {
-    this.formEmpleado.reset();
+    // this.formEmpleado.reset();
   }
 
   getDataEmpleado() {
