@@ -19,7 +19,7 @@ export class MenuPrincipalComponent implements OnInit{
   }
   
   logout():void{
-    this.authService.logout()
+    
     sessionStorage.clear()
     this.router.navigate([''])
   }
