@@ -38,8 +38,8 @@ export interface carroUpdateDto {
     stock: number;
     anio: number;
     nroSerie: string;
+    combustible: string;
     objMarca: TipoDto;
-    combustible: string
 }
 
 export interface carroDeleteDto {

@@ -20,13 +20,13 @@ export class CarroService {
     return this.http.post<carroCreateDto>(`${this.urlApi}/carros`,data)
   }
 
-  public updateCarro(data:carroUpdateDto):Observable<carroUpdateDto>{
-    return this.http.put<carroUpdateDto>(`${this.urlApi}/carros`,data)
-  }
-
   public deleteCarro(id:number):Observable<any>{
     console.log(id);
     return this.http.delete<any>(`${this.urlApi}/carros/${id}`)
+  }
+
+  public updateCarro(data:carroUpdateDto):Observable<carroUpdateDto>{
+    return this.http.put<carroUpdateDto>(`${this.urlApi}/carros`,data)
   }
 
 }

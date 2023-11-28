@@ -118,7 +118,7 @@ export class MantCarrosComponent implements OnInit {
   }
 
   async actualizarCarro() {
-
+console.log(this.formCarro.value)
     if (this.formCarro.valid) {
       const datos: carroUpdateDto = {
         id: this.formCarro.get('id')?.value,
@@ -154,6 +154,7 @@ export class MantCarrosComponent implements OnInit {
 
   public ecargarCarro(element: any) {
     this.formCarro.patchValue({
+      id: element.id,
       descripcion : element.descripcion,
       modelo : element.modelo,
       origen : element.origen,
@@ -164,7 +165,7 @@ export class MantCarrosComponent implements OnInit {
       nroSerie : element.nroSerie,
       objMarca : element.objMarca.idmarca
     })
-    console.log(event)
+    console.log(element.id)
 
   }
 
