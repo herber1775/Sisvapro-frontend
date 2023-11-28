@@ -1,4 +1,6 @@
 export class tipoEmpleadoDto{
+    idTipo!: number;
+    descrip!: string;
 
 }  
 

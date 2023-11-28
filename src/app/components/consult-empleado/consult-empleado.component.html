@@ -1,1 +1,46 @@
-<p>consult-empleado works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="consult-empleado.component.css">
+    <title>Filtro Empleados</title>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+            <label for="nombreElegido"><b>Nombre:</b></label>
+            <input type="text" class="form-control" name="nombre">
+        </div>
+    </form>
+    <div class="list-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Dni</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let elemento of dataempl">
+              <th scope="row">{{elemento.idEmpleado}}</th>
+              <td>{{elemento.dni}}</td>
+              <td>{{elemento.nom}}</td>
+              <td>{{elemento.ape}}</td>
+              <td>{{elemento.tel}}</td>
+              <td>{{elemento.objTipo.descrip}}</td>
+              <td>{{elemento.user}}</td>
+              <td>{{elemento.clave}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+</body>
+</html>

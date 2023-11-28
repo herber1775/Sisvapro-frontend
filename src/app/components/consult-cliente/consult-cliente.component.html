@@ -1,1 +1,46 @@
-<p>consult-cliente works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="consult-cliente.component.css">
+    <title>Filtro Cliente</title>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+            <label for="nombreElegido"><b>Nombre:</b></label>
+            <input type="text" class="form-control" name="nombre">
+        </div>
+    </form>
+        <div class="list-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>                        
+                        <th scope="col">DNI</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of data">
+                        <th scope="row">{{elemento.idCli}}</th>
+                        <td>{{elemento.nombre}}</td>
+                        <td>{{elemento.apellido}}</td>
+                        <td>{{elemento.direccion}}</td>
+                        <td>{{elemento.telefono}}</td>
+                        <td>{{elemento.correo}}</td>
+                        <td>{{elemento.dni}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
