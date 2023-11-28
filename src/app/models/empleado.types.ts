@@ -1,6 +1,6 @@
-export interface TipoDto {
-    idTipo: number;
-    descrip: string;
+export class TipoDto {
+    idTipo!: number;
+    descrip!: string;
   }
   
   export class Authority{

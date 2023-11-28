@@ -152,7 +152,7 @@ export class GenerarVentaComponent {
         detalleVenta.carro = this.carroObtenido;
         detalleVenta.precio = this.carroObtenido.precio;
         detalleVenta.subtotal = detalleVenta.cantidad * detalleVenta.precio;
-        detalleVenta.descripcionC = this.carroObtenido.modelo + " " + this.carroObtenido.objMarca.descripcion
+        detalleVenta.descripcionC = this.carroObtenido.modelo + " " + this.carroObtenido.objMarca.nomMarca
         this.addDetalleToStorage(detalleVenta);
         this.cargarDetalles();
         this.carroObtenido = new carroDto();

@@ -1,1 +1,50 @@
-<p>consult-empleado works!</p>
+<div style="font-family: Courier New, monospace;" class="container">
+
+    <main>
+
+        <section style="width: 75%; float: left;">
+            <h1>Consulta de Empleados</h1>
+            <table class="table" id="myTable">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Dni</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Tipo</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of dataEmp">
+                        <th scope="row">{{elemento.idEmpleado}}</th>
+                        <td>{{elemento.dni}}</td>
+                        <td>{{elemento.nom}}</td>
+                        <td>{{elemento.ape}}</td>
+                        <td>{{elemento.tel}}</td>
+                        <td>{{elemento.objTipo.descrip}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable({
+            "language" : {
+                "lengthMenu" : "Mostrando _MENU_ ",
+                "zeroRecords" : "No hay registros a mostrar",
+                "info" : "PÃ¡g _PAGE_ de _PAGES_",
+                "infoEmpty" : "No records available",
+                "infoFiltered" : "(filtered from _MAX_ total records)"
+            }
+        });
+    });
+</script>
+
+
+

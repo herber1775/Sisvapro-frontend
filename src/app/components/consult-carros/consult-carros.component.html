@@ -1,1 +1,45 @@
-<p>consult-carros works!</p>
+
+<h1 style="margin: 10px;">Consulta Carros</h1>
+    <form style="padding: 0 50px;">
+        <div class="form-group" >
+            <label for="marcaElegida" style="font-size: 20px;"><b>Marca:</b></label>
+            <select class="form-control" name="marcaElegida" id="marcaElegida" [(ngModel)]="marcaElegida"
+                (change)="onChangeMarca()">
+                <option [ngValue]="null" selected>Elige una Marca</option>
+                <option [ngValue]="marca.idmarca" *ngFor="let marca of marcas">{{marca.nomMarca}}</option>
+            </select>
+        </div>
+    </form>
+<div style="font-family: Courier New, monospace;" class="container">
+    <main>
+        <section style="width: 75%; float: left;">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">IDMarca</th>
+                    <th scope="col">Origen</th>
+                    <th scope="col">Combustible</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of data">
+                        <th scope="row">{{elemento.id}}</th>
+                        <td >{{elemento.descripcion}}</td>
+                        <td >{{elemento.objMarca.nomMarca}}</td>
+                        <td >{{elemento.origen}}</td>
+                        <td >{{elemento.combustible}}</td>
+                        <td >{{elemento.precio}}</td>
+                        <td >{{elemento.stock}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
