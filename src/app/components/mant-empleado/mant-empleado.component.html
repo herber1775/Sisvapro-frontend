@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Mantenimiento Cliente</title>
+  <title>Mantenimiento Empleado</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 
@@ -19,7 +20,7 @@
           <!-- <input type="text" class="form-control" placeholder="Ingrese su dni" formControlName="dni"> -->
           <div class="form-group">
             <label>Dni</label>
-            <input type="text" class="form-control" placeholder="Ingrese su DNI" formControlName="dni">
+            <input type="text" class="form-control" placeholder="Ingrese su DNI" formControlName="dni" maxlength="8">
           </div>
           <div class="form-group">
             <label>Nombres</label>
@@ -53,7 +54,20 @@
           </div>
           <div class="form-group">
             <label>Clave</label>
-            <input type="text" class="form-control" placeholder="Ingrese su Clave" formControlName="clave">
+            <div class="input-group">
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                class="form-control"
+                placeholder="Ingrese su Clave"
+                formControlName="clave"
+                id="passwordInput"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text" id="togglePassword" style="cursor: pointer;" (click)="togglePasswordVisibility()">
+                  <i class="fa fa-eye"></i>
+                </span>
+              </div>
+            </div>
           </div>
           <button type="submit" name="accion" class="btn btn-info">
             <i class="bi bi-plus"></i> Agregar

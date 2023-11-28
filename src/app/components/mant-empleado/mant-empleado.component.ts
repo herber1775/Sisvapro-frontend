@@ -12,6 +12,10 @@ export class MantEmpleadoComponent implements OnInit {
   public lstEmpleados: EmpleadoDto[] = [];
   public formEmpleado!: FormGroup;
   public valid: boolean | null = null;
+  showPassword: boolean = false;
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   objTipo: TipoDto[] = [
     { idTipo: 1, descrip: "Administrador" },
